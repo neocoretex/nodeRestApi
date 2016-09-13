@@ -9,7 +9,7 @@ var cfg = jsonObject('../api.json');
 
 function serialize(req,res) {
   if(req.err) {
-    res.status(422).json({errors:{detail:res.err}});
+    res.status(422).json({errors:[{detail:res.err}]});
   }else{
     req.data.forEach(function(data,i) {
       var temp = data[i];
@@ -18,7 +18,7 @@ function serialize(req,res) {
         type: 'data'
       };
       for(field in cfg.rules['/'+req.model].fields){
-        data[i].attributes[field] = temp.field;
+        data[i].attributes[field] = temp[field];
       }
       
     });
