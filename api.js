@@ -1,8 +1,10 @@
 function generateRoute(app,context,models) {
-  console.log("Number of models "+models.length);
   for(var endpoints in context.rules){
-    app.get("/"+endpoints,function(req,res) {
-      res.send("This is api endpoint");
+    var routeConfig = context.rules[endpoints];
+    app.get(endpoints,function(req,res,next) {
+      var cfg = context.rules[req.url];
+      var model = models[cfg.db];
+      require(cfg.mixin).get(req,res);
     });
   }
 }

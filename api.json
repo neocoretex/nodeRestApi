@@ -3,12 +3,14 @@
     "serializer":"./serializers/json-serializer"
   },
   "rules":{
-    "feedback":{
+    "/feedback":{
       "db":"feedback",
+      "mixin":"./mixin/listViewMixin",
       "fields":["email","content"]
     },
-    "blog":{
+    "/blog":{
       "db":"blog",
+      "mixin":"./mixin/listViewMixin",
       "fields":["title","markdown"]
     }
   }
