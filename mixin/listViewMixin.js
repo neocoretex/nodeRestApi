@@ -1,19 +1,19 @@
 var router = {};
 
-router.get = function(req,res) {
-  res.send("Testing");
+router.get = function(req) {
+  req.resp = "Testing this shit";
 }
 
-router.put = function(req,res) {
-  res.send("Testing");
+router.put = function(req) {
+  req.resp = "Testing this shit";
 }
 
-router.post = function(req,res) {
-  res.send("Testing");
+router.post = function(req) {
+  req.resp = "Testing this shit";
 }
 
-router.delete = function(req,res) {
-  res.send("Testing");
+router.delete = function(req) {
+  req.resp = "Testing this shit";
 }
 
 module.exports = router;
