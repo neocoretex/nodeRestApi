@@ -4,7 +4,6 @@ router.get = function(req,res,next) {
   req.model.find({},function(err,data){
     req.err = err;
     req.data = data;
-    console.log(data);
     next(req,res);
   });
 }
