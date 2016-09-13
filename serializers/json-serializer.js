@@ -15,7 +15,9 @@ function serialize(req,res) {
       var temp = data[i];
       req.data[i] = {
         _id: temp.id,
-        type: 'data'
+        type: 'data',
+        attributes:{
+        }
       };
       for(field in cfg.rules['/'+req.model].fields){
         data[i].attributes[field] = temp[field];
