@@ -1,17 +1,17 @@
 function serialize(req,res) {
   if(req.err) {
-    res.status(422).json({errors:[{detail:req.err}]});
+    res.status(422).json({errors:{detail:req.err}});
   }else{
     req.data.forEach(function(data,i) {
-      var temp = data[i];
-      req.data[i] = {
-        _id: temp.id,
+      var temp = data;
+      data = {
+        _id: temp._id,
         type: 'data',
         attributes:{
         }
       };
       for(field in req.context.fields){
-        data[i].attributes[field] = temp[field];
+        data.attributes[field] = temp.field;
       }
       
     });
