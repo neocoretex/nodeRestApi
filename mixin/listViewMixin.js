@@ -17,4 +17,22 @@ router.post = function(req,res,next) {
   });
 }
 
+router.put = function(req,res,next) {
+  var dataInstance = new req.model(req.body);
+  dataInstance.save(function(err,data) {
+    req.err = err;
+    req.data = data;
+    next(req,res);
+  });
+}
+
+router.delete = function(req,res,next) {
+  var dataInstance = new req.model(req.body);
+  dataInstance.save(function(err,data) {
+    req.err = err;
+    req.data = data;
+    next(req,res);
+  });
+}
+
 module.exports = router;
