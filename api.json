@@ -1,7 +1,5 @@
 {
-  "context":{
-    "serializer":"./serializers/json-serializer"
-  },
+  "serializer":"./serializers/json-serializer",
   "rules":{
     "/feedback":{
       "db":"feedback",
