@@ -1,15 +1,6 @@
-var fs = require('fs');
-
-function jsonObject(fileName) {
-  var content = fs.readFileSync(fileName,'utf8');
-  return JSON.parse(content);
-}
-
-var cfg = jsonObject('../api.json');
-
 function serialize(req,res) {
   if(req.err) {
-    res.status(422).json({errors:[{detail:res.err}]});
+    res.status(422).json({errors:[{detail:req.err}]});
   }else{
     req.data.forEach(function(data,i) {
       var temp = data[i];
@@ -19,7 +10,7 @@ function serialize(req,res) {
         attributes:{
         }
       };
-      for(field in cfg.rules['/'+req.model].fields){
+      for(field in req.context.fields){
         data[i].attributes[field] = temp[field];
       }
       
