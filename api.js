@@ -1,6 +1,6 @@
-function generateRoute(app,context) {
+function generateRoute(app,context,models) {
+  console.log("Number of models "+models.length);
   for(var endpoints in context.rules){
-    console.log(endpoints);
     app.get("/"+endpoints,function(req,res) {
       res.send("This is api endpoint");
     });

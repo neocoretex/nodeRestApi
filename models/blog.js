@@ -6,4 +6,4 @@ var blogSchema = new Schema({
   markdown: String
 });
 
-modules.exports = mongoose.models('Blog',blogSchema);
+module.exports = mongoose.model('Blog',blogSchema);
