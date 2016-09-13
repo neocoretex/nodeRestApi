@@ -3,11 +3,13 @@
   "rules":{
     "/feedback":{
       "db":"feedback",
+      "modelName":"feedback",
       "mixin":"./mixin/listViewMixin",
       "fields":["email","content"]
     },
     "/blog":{
       "db":"blog",
+      "modelName":"blog",
       "mixin":"./mixin/listViewMixin",
       "fields":["title","markdown"]
     }

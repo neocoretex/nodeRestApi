@@ -5,8 +5,8 @@ function generateRoute(app,context,models) {
       .get(endpoints,function(req,res,next) {
         var cfg = context.rules[req.url];
         req.model = models[cfg.db];
+        req.modelName = cfg.modelName;
         require(cfg.mixin).get(req,res,require(context.serializer));
-        //require(context.context.serializer)(req,res);
       })
       .put(endpoints,function(req,res,next) {
         var cfg = context.rules[req.url];
