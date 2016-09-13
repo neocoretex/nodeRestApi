@@ -5,7 +5,7 @@ function serialize(req,res) {
     req.data.forEach(function(data,i) {
       var temp = data[i];
       req.data[i] = {
-        _id: temp.id,
+//        _id: temp.id,
         type: 'data',
         attributes:{
         }

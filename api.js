@@ -19,9 +19,9 @@ function generateRoute(app,context,models) {
       .post(endpoints,function(req,res,next) {
         var cfg = context.rules[req.url];
         req.model = models[cfg.db];
+        req.modelName = cfg.modelName;
         req.context = cfg;
-        require(cfg.mixin).post(req);
-        require(context.context.serializer)(req,res);
+        require(cfg.mixin).post(req,res,require(context.serializer));
       })
       .delete(endpoints,function(req,res,next) {
         var cfg = context.rules[req.url];

@@ -4,12 +4,13 @@ router.get = function(req,res,next) {
   req.model.find({},function(err,data){
     req.err = err;
     req.data = data;
+    console.log(data);
     next(req,res);
   });
 }
 
 router.post = function(req,res,next) {
-  var dataInstance = new req.model(req.body);
+  var dataInstance = new req.model({email:"tek",content:"akjsdhf"});
   dataInstance.save(function(err,data) {
     req.err = err;
     req.data = data;
