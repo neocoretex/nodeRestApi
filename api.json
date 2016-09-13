@@ -1,0 +1,15 @@
+{
+  "context":{
+    "serializer":"./serializers/json-serializer"
+  },
+  "rules":{
+    "feedback":{
+      "db":"feedback",
+      "fields":["email","content"]
+    },
+    "blog":{
+      "db":"blog",
+      "fields":["title","markdown"]
+    }
+  }
+}
