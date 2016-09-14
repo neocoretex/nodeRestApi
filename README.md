@@ -1,5 +1,9 @@
 # Node Rest Api
 
+[![npm](https://img.shields.io/npm/v/express-rest-framework.svg?maxAge=2592000)]()
+[![npm](https://img.shields.io/npm/l/express-rest-framework.svg?maxAge=2592000)]()
+[![npm](https://img.shields.io/npm/dt/express-rest-framework.svg?maxAge=2592000)]()
+
 Node-Rest-Api is a helper library that help creating backend rest api faster.
 Apart from a list of predefined mixins new ones can also be created for total
 customization and same goes for the serializers.
