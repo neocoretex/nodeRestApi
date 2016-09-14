@@ -1,5 +1,5 @@
 {
-  "name": "node-rest-api",
+  "name": "express-rest-framework",
   "version": "0.1.0",
   "description": "Create express rest api from json file",
   "main": "api.js",
