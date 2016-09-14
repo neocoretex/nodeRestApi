@@ -9,7 +9,7 @@ router.get = function(req,res,next) {
 }
 
 router.post = function(req,res,next) {
-  var dataInstance = new req.model(req.body);
+  var dataInstance = new req.model({email:"tek",content:"akjsdhf"});
   dataInstance.save(function(err,data) {
     req.err = err;
     req.data = data;

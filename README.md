@@ -13,7 +13,7 @@ These instructions will get you a copy of the project up and running on your loc
 Get a copy of the codes from npm using
 
 ```
-npm install node-rest-api
+npm install express-rest-framework
 ```
 
 ## Running the tests
