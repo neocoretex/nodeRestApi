@@ -2,10 +2,6 @@ function serialize(req,res) {
   if(req.err) {
     res.status(422).json({errors:{detail:req.err}});
   }else{
-    req.data.forEach(function(data,i) {
-      var temp = data;
-      data = {
-        _id: temp._id,
     req.data.forEach(function(atom,i) {
       req.data[i] = {
         _id: atom.id,
@@ -14,7 +10,6 @@ function serialize(req,res) {
         }
       };
       for(field in req.context.fields){
-        data.attributes[field] = temp.field;
         var fieldName = req.context.fields[field];
         req.data[i].attributes[fieldName] = atom[fieldName];
       }
