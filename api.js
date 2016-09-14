@@ -12,10 +12,10 @@ function generateRoute(app,context,models) {
       .put(endpoints,function(req,res,next) {
         var cfg = context.rules[req.url];
         req.model = models[cfg.db];
+        req.modelName = cfg.modelName;
         req.context = cfg;
-        require(cfg.mixin).put(req);
-        require(context.context.serializer)(req,res);
-      })
+        require(cfg.mixin).put(req,res,require(context.serializer));
+       })
       .post(endpoints,function(req,res,next) {
         var cfg = context.rules[req.url];
         req.model = models[cfg.db];
@@ -26,10 +26,10 @@ function generateRoute(app,context,models) {
       .delete(endpoints,function(req,res,next) {
         var cfg = context.rules[req.url];
         req.model = models[cfg.db];
+        req.modelName = cfg.modelName;
         req.context = cfg;
-        require(cfg.mixin).delete(req);
-        require(context.context.serializer)(req,res);
-      });
+        require(cfg.mixin).delete(req,res,require(context.serializer));
+       });
   }
 }
 
