@@ -1,7 +1,9 @@
 var express  = require('express');
 var mongoose = require('mongoose');
 var fs  = require('fs');
+var bodyParser = require('body-parser')
 var app = express();
+app.use(bodyParser.urlencoded({ extended: false }))
 
 mongoose.connection.on('open', function (ref) {
   console.log('Connected to mongo server.');
