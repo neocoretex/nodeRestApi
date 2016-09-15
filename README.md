@@ -39,6 +39,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 ## Authors
 
 * **Rahul Bhola** - *Initial work* - [georoot](https://github.com/georoot)
+* **Gurukiran V** - *Tests* - [Gurukiran097](https://github.com/Gurukiran097)
 
 See also the list of [contributors](https://github.com/neocoretex/nodeRestApi/graphs/contributors) who participated in this project.
 
