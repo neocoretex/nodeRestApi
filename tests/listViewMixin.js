@@ -1,5 +1,5 @@
 var hippie = require('hippie');
-
+var server = require('../server');
 
 function api() {
   return hippie()
@@ -8,6 +8,9 @@ function api() {
 }
 
 describe("listViewMixin", function() {
+  after(function () {
+    server.close();
+  });
 
   describe("CRUD operations", function() {
 
