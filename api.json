@@ -1,7 +1,13 @@
 {
   "serializer":"./serializers/json-serializer",
   "rules":{
-    "/feedback":{
+    "/feedback/:id":{
+      "db":"feedback",
+      "modelName":"feedback",
+      "mixin":"./mixin/listViewDeleteMixin",
+      "fields":["email","content"]
+    },
+     "/feedback":{
       "db":"feedback",
       "modelName":"feedback",
       "mixin":"./mixin/listViewMixin",
