@@ -3,7 +3,7 @@ var router = {};
 router.get = function(req,res,next) {
   var query = {};
   query = {
-    '_id':req.params.id;
+    '_id':req.params.id
   };
   req.model.find(query,function(err,data){
     req.err = err;
