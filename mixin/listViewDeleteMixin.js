@@ -1,7 +1,11 @@
 var router = {};
 
 router.get = function(req,res,next) {
-  req.model.find({},function(err,data){
+  var query = {};
+  query = {
+    '_id':req.params.id;
+  };
+  req.model.find(query,function(err,data){
     req.err = err;
     req.data = data;
     next(req,res);
