@@ -20,6 +20,47 @@ Get a copy of the codes from npm using
 npm install express-rest-framework
 ```
 
+### Simple usage
+
+Express rest framework needs a json document to describe the api. Consider the
+following document
+```
+{
+  "serializer":"express-rest-framework/serializers/json-serializer",
+  "rules":{
+    "/feedback/:id":{
+      "db":"feedback",
+      "modelName":"feedback",
+      "mixin":"express-rest-framework/mixin/listViewDeleteMixin",
+      "fields":["email","content"]
+    },
+     "/feedback":{
+      "db":"feedback",
+      "modelName":"feedback",
+      "mixin":"express-rest-framework/mixin/listViewMixin",
+      "fields":["email","content"],
+      "filter":{
+        "email":"test@test.com"
+      }
+    }
+  }
+}
+```
+the above document can be passed into the `express-rest-framework` using
+
+```
+require('express-rest-framework')(app,context,models);
+```
+
+where
+* *app*     : express app
+* *context* : json document that we just described above
+* *models*  : mongoose model dictionary
+
+The description is pretty much self explanatory. Although this example shows
+and uses `serializers` and `mixin` provided by the framework, it is very
+much hackable to use own serializers and mixins at the same time.
+
 ## Running the tests
 
 All the tests for the framework are written in mocha
