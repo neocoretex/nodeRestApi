@@ -19,7 +19,8 @@
   "homepage": "https://github.com/neocoretex/nodeRestApi#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "mustache": "^2.2.1"
   },
   "devDependencies": {
     "hippie": "^0.5.0",

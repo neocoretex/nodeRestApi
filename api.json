@@ -1,5 +1,5 @@
 {
-  "serializer":"./serializers/json-serializer",
+  "serializer":"./serializers/html-serializer",
   "rules":{
     "/feedback/:id":{
       "db":"feedback",
