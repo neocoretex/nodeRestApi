@@ -1,7 +1,7 @@
 var router = {};
 
 router.get = function(req,res,next) {
-  req.model.find({},function(err,data){
+  req.model.find(req.context.filter,function(err,data){
     req.err = err;
     req.data = data;
     next(req,res);

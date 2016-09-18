@@ -11,13 +11,17 @@
       "db":"feedback",
       "modelName":"feedback",
       "mixin":"./mixin/listViewMixin",
-      "fields":["email","content"]
+      "fields":["email","content"],
+      "filter":{
+        "email":"test@test.com"
+      }
     },
     "/blog":{
       "db":"blog",
       "modelName":"blog",
       "mixin":"./mixin/listViewMixin",
-      "fields":["title","markdown"]
+      "fields":["title","markdown"],
+      "filter":{}
     }
   }
 }
