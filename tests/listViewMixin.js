@@ -3,7 +3,6 @@ var server = require('../server');
 
 function api() {
   return hippie()
-    .json()
     .base('http://localhost:3000');
 }
 
@@ -23,6 +22,7 @@ describe("listViewMixin", function() {
 
     it("Add data",function() {
       return api()
+        .form()
         .post('/blog')
         .send({"title":"leol","markdown":"bs"})
         .expectStatus(200)
@@ -31,6 +31,7 @@ describe("listViewMixin", function() {
 
     it("Update data",function() {
       return api()
+        .form()
         .post('/blog')
         .send({title:"title",markdown:"markdown"})
         .expectStatus(200)
@@ -39,6 +40,7 @@ describe("listViewMixin", function() {
 
     it("Delete data",function() {
       return api()
+        .form()
         .del('/blog')
         .send({title:"title",markdown:"markdown"})
         .expectStatus(200)
